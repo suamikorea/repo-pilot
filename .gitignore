@@ -68,6 +68,11 @@ recorded_video.mp4
 *.jpeg
 *.png
 
+# API keys and sensitive files
+오픈AI 토큰 코드.txt
+GPT_응답_결과.txt
+temp.wav
+
 # IDE
 .vscode/
 .idea/
