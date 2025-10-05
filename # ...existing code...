@@ -1,0 +1,10 @@
+# ...existing code...
+  - "2. Click on '...'"
+# 또는
+  - |
+    2. Click on '...'
+# 또는 (멀티라인 텍스트인 경우)
+  - >
+    2. Click on '...'
+    그리고 추가 설명...
+# ...existing code...

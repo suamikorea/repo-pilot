@@ -14,7 +14,298 @@ body:
     id: steps
     attributes:
       label: Steps to reproduce
-      placeholder: 1. Go to '...'
+      # ...existing code...
+        - "2. Click on '...'"
+      # 또는
+        - |
+          2. Click on '...'
+      # 또는 (멀티라인 텍스트인 경우)
+        - >
+          2. Click on '...'
+          그리고 추가 설명...
+      # ...existing code...      2. Click on '...'      name: 🐞 Bug report
+      description: Report a bug to help us improve
+      labels: ["bug"]
+      body:
+        - type: textarea
+          id: what-happened
+          attributes:
+            label: What happened?
+            description: Also tell us what you expected to happen
+            placeholder: A clear and concise description of what the bug is.
+          validations:
+            required: true
+        - type: textarea
+          id: steps
+          attributes:
+            label: Steps to reproduce
+            placeholder: |
+              1. Go to '...'
+              2. Click on '...'
+              3. Scroll down to '...'
+              4. See error
+        - type: input
+          id: version
+          attributes:
+            label: Version/commit
+            placeholder: e.g., v1.2.3 or commit SHA            # 잘못된 예시
+            - item1
+            - item2: value  # 오류: 블록 시퀀스가 맵 키로 사용됨            name: 🐞 Bug report
+            description: Report a bug to help us improve
+            labels: ["bug"]
+            body:
+              - type: textarea
+                id: what-happened
+                attributes:
+                  label: What happened?
+                  description: Also tell us what you expected to happen
+                  placeholder: A clear and concise description of what the bug is.
+                validations:
+                  required: true
+              - type: textarea
+                id: steps
+                attributes:
+                  label: Steps to reproduce
+                  placeholder: |
+                    1. Go to '...'
+                    2. Click on '...'
+                    3. Scroll down to '...'
+                    4. See error
+              - type: input
+                id: version
+                attributes:
+                  label: Version/commit
+                  placeholder: e.g., v1.2.3 or commit SHA                  name: 🐞 Bug report
+                  description: Report a bug to help us improve
+                  labels: ["bug"]
+                  body:
+                    - type: textarea
+                      id: what-happened
+                      attributes:
+                        label: What happened?
+                        description: Also tell us what you expected to happen
+                        placeholder: A clear and concise description of what the bug is.
+                      validations:
+                        required: true
+                    - type: textarea
+                      id: steps
+                      attributes:
+                        label: Steps to reproduce
+                        placeholder: |
+                          1. Go to '...'
+                          2. Click on '...'
+                          3. Scroll down to '...'
+                          4. See error
+                    - type: input
+                      id: version
+                      attributes:
+                        label: Version/commit
+                        placeholder: e.g., v1.2.3 or commit SHA
+                    - type: textarea
+                      id: logs
+                      attributes:
+                        label: Relevant log output
+                        description: Please copy and paste any relevant log output. This will be automatically formatted into code, so no need for backticks.
+                        render: shell
+                    - type: checkboxes
+                      id: terms
+                      attributes:
+                        label: Code of Conduct
+                        description: By submitting this issue, you agree to follow our Code of Conduct
+                        options:
+                          - label: I agree to follow this project's Code of Conduct
+                            required: true                            name: 🐞 Bug report
+                            description: Report a bug to help us improve
+                            labels: ["bug"]
+                            body:
+                              - type: textarea
+                                id: what-happened
+                                attributes:
+                                  label: What happened?
+                                  description: Also tell us what you expected to happen
+                                  placeholder: A clear and concise description of what the bug is.
+                                validations:
+                                  required: true
+                              - type: textarea
+                                id: steps
+                                attributes:
+                                  label: Steps to reproduce
+                                  placeholder: |
+                                    1. Go to '...'
+                                    2. Click on '...'
+                                    3. Scroll down to '...'
+                                    4. See error
+                                validations:
+                                  required: true
+                              - type: input
+                                id: version
+                                attributes:
+                                  label: Python version
+                                  placeholder: e.g., Python 3.9.0
+                                validations:
+                                  required: true
+                              - type: input
+                                id: pip-version
+                                attributes:
+                                  label: pip version
+                                  placeholder: e.g., pip 21.0.1
+                                validations:
+                                  required: true
+                              - type: textarea
+                                id: logs
+                                attributes:
+                                  label: Relevant log output
+                                  description: Please copy and paste any relevant log output. This will be automatically formatted into code.
+                                  render: shell
+                              - type: checkboxes
+                                id: terms
+                                attributes:
+                                  label: Code of Conduct
+                                  description: By submitting this issue, you agree to follow our Code of Conduct
+                                  options:
+                                    - label: I agree to follow this project's Code of Conduct
+                                      required: true                                      name: 🐛 Bug Report
+                                      description: File a bug report to help us improve pip
+                                      title: "[Bug]: "
+                                      labels: ["type:bug", "needs-triage"]
+                                      assignees: []
+                                      body:
+                                        - type: markdown
+                                          attributes:
+                                            value: |
+                                              Thank you for taking the time to file a bug report! 
+                                              
+                                              Please fill out this form as completely as possible to help us understand and reproduce the issue.
+                                      
+                                        - type: textarea
+                                          id: description
+                                          attributes:
+                                            label: Expected behavior
+                                            description: A clear and concise description of what you expected to happen.
+                                            placeholder: "I expected pip to..."
+                                          validations:
+                                            required: true
+                                      
+                                        - type: textarea
+                                          id: actual-behavior
+                                          attributes:
+                                            label: Actual behavior
+                                            description: A clear and concise description of what actually happened.
+                                            placeholder: "Instead, pip..."
+                                          validations:
+                                            required: true
+                                      
+                                        - type: textarea
+                                          id: steps-to-reproduce
+                                          attributes:
+                                            label: Steps to reproduce
+                                            description: Please provide detailed steps to reproduce the issue.
+                                            placeholder: |
+                                              1. Run `pip install package-name`
+                                              2. Execute `pip show package-name`
+                                              3. Observe the error
+                                            value: |
+                                              1. 
+                                              2. 
+                                              3. 
+                                          validations:
+                                            required: true
+                                      
+                                        - type: input
+                                          id: pip-version
+                                          attributes:
+                                            label: pip version
+                                            description: "Output of `pip --version`"
+                                            placeholder: "pip 23.3.1 from /usr/local/lib/python3.11/site-packages/pip (python 3.11)"
+                                          validations:
+                                            required: true
+                                      
+                                        - type: input
+                                          id: python-version
+                                          attributes:
+                                            label: Python version
+                                            description: "Output of `python --version`"
+                                            placeholder: "Python 3.11.0"
+                                          validations:
+                                            required: true
+                                      
+                                        - type: dropdown
+                                          id: operating-system
+                                          attributes:
+                                            label: Operating System
+                                            description: What operating system are you using?
+                                            options:
+                                              - Windows
+                                              - macOS
+                                              - Linux (Ubuntu/Debian)
+                                              - Linux (RHEL/CentOS/Fedora)
+                                              - Linux (Other)
+                                              - Other
+                                          validations:
+                                            required: true
+                                      
+                                        - type: input
+                                          id: os-version
+                                          attributes:
+                                            label: OS Version
+                                            description: "Specific version of your operating system"
+                                            placeholder: "e.g., Windows 11, macOS 14.1, Ubuntu 22.04"
+                                          validations:
+                                            required: true
+                                      
+                                        - type: textarea
+                                          id: command-output
+                                          attributes:
+                                            label: Command output
+                                            description: |
+                                              Please copy and paste the complete output from the failing command.
+                                              Include the full command that was run.
+                                            render: shell
+                                            placeholder: |
+                                              $ pip install some-package
+                                              Looking in indexes: https://pypi.org/simple
+                                              Collecting some-package
+                                              ERROR: Could not find a version that satisfies the requirement some-package
+                                      
+                                        - type: textarea
+                                          id: verbose-output
+                                          attributes:
+                                            label: Verbose output (optional)
+                                            description: |
+                                              If the issue isn't clear from the standard output, please re-run the command with `-v` or `--verbose` flag.
+                                              This can help us understand what pip is doing internally.
+                                            render: shell
+                                            placeholder: |
+                                              $ pip install some-package --verbose
+                                              ... (verbose output here)
+                                      
+                                        - type: textarea
+                                          id: additional-context
+                                          attributes:
+                                            label: Additional context
+                                            description: |
+                                              Add any other context about the problem here.
+                                              This might include:
+                                              - Virtual environment details
+                                              - Network configuration
+                                              - Corporate proxy settings
+                                              - Previous working versions
+                                            placeholder: "Any additional information that might be relevant..."
+                                      
+                                        - type: checkboxes
+                                          id: checklist
+                                          attributes:
+                                            label: Checklist
+                                            description: Please confirm the following before submitting
+                                            options:
+                                              - label: I have searched existing issues and this is not a duplicate
+                                                required: true
+                                              - label: I have included the pip and Python version
+                                                required: true
+                                              - label: I have included the complete command output
+                                                required: true
+                                              - label: I am willing to test proposed solutions
+                                                required: false      placeholder: 1. Go to '...'
 2. Click on '...'
 3. Scroll down to '...'
 4. See error
